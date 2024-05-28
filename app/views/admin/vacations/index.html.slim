@@ -1,0 +1,13 @@
+- @vacations.group_by(&:user).each do |user, vacations|
+  h3 = "User: #{user.first_name}"
+  ul
+    - vacations.each do |vacation|
+      li
+        = vacation.start_date
+        | -
+        = vacation.end_date
+        | Status:
+        = form_with model: [:admin, vacation], method: :patch do |f|
+          = f.label :status
+          = f.select :status, statuses, prompt: 'Select status'
+          = f.submit 'Update'

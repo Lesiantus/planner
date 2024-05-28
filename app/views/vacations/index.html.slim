@@ -1,0 +1,11 @@
+= render 'shared/navbar'
+h1 #{@user.first_name}'s Vacations
+
+ul
+  - @vacations.each do |vacation|
+    li
+      = vacation.start_date
+      | -
+      = vacation.end_date
+
+      = vacation.status

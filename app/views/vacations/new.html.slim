@@ -1,0 +1,14 @@
+- if user_signed_in?
+  = render 'shared/errors', resource: @vacation
+  = link_to ' | Main', user_vacations_path(current_user.id)
+
+  = form_with model: [current_user, @vacation] do |f|
+    = f.label :start_date
+    = f.date_field :start_date
+
+    = f.label :end_date
+    = f.date_field :end_date
+
+    = f.submit 'Create vacation'
+- else
+  = link_to "Log in", new_user_session_path

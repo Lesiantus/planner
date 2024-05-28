@@ -1,0 +1,7 @@
+- if user_signed_in?
+  h1 Admin
+  = current_user.email
+  p
+  = form_tag destroy_user_session_path, method: :delete do
+    = submit_tag "Sign out"
+    end
