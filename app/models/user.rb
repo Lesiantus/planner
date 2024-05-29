@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :registerable,
          :recoverable,
          :rememberable,
-         :validatable
+         :validatable,
+         :confirmable
   has_many :vacations, dependent: :destroy
 
   validates :first_name, presence: true, length: { maximum: 50 }
