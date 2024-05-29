@@ -4,7 +4,8 @@
   = form_tag destroy_user_session_path, method: :delete do
     = submit_tag "Sign out"
     end
-  = link_to ' | Main', user_vacations_path(current_user.id)
-  = link_to ' | New', new_user_vacation_path(current_user.id)
   - if is_admin?
     = link_to ' | Administrative side', admin_vacations_path
+  - else
+    = link_to ' | Main', user_vacations_path(current_user.id)
+    = link_to ' | New', new_user_vacation_path(current_user.id)

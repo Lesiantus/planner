@@ -5,20 +5,20 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* ruby 2.7.5p203
+* Rails 6.1.7.6
+* Node v14.9.0
 
-* System dependencies
+* Bundle
 
-* Configuration
+* rails db:migrate
 
-* Database creation
+* rails db:seed
 
-* Database initialization
+Сущности:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  1. Пользователи: Администратор, пользователь
+     Пользователь может зарегистрироваться, создать заявку на отпуск.
+     Администрато может создать собственную заявку на отпуск, может подтвержать/отклонять другие заяки. Имеет доступ к административной части приложения.
+  2. Заявка на отпуск: Зарегистрированный пользователь может подать заявку
+     на отпуск. Имеет несколько статусов, статусы изменяются администратором приложения, при смене статуса на "Подтвержденную" или "отклоненную", создатель заявки на отпуск получает письмо с оповещением о подтвержении или отклонении заявки.
