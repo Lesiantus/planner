@@ -15,6 +15,11 @@ Things you may want to cover:
 
 * rails db:seed
 
+* admin-user email: "test@test.com, password: 123123
+* users:
+  1) email: test1@test.com, password: 123123
+  2) email: test2@test.com, password: 123123
+
 Сущности:
 
   1. Пользователи: Администратор, пользователь
